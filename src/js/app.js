@@ -28,9 +28,9 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
-
-  // reset the website body with the new html output
-  document.querySelector("#widget_content").innerHTML = `<div class="widget">
+  const newName =
+    // reset the website body with the new html output
+    (document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>Lucy Boilett</h1>
@@ -43,7 +43,7 @@ function render(variables = {}) {
             <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
-    `;
+    `);
 }
 
 /**
